@@ -10,4 +10,12 @@ Essa será uma aplicação onde o seu principal objetivo é uma pequena aplic
 - Remover uma tarefa
 - Marcar e desmarcar uma tarefa como concluída
 
-A seguir veremos com mais detalhes o que e como precisa ser feito 🚀
+## Tenologia
+- ReactJS
+- Typescript
+
+## Milha extra 🚀
+
+Foi desenvolvido as Feture alem do desafio proposto.
+- Dark theme
+- uso do storage para armazenar as task

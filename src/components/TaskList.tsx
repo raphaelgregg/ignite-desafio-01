@@ -16,14 +16,38 @@ export function TaskList() {
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
+    const id = (Math.floor(Math.random() * 1000000) + tasks.length);
+    
+    try {
+      if(!newTaskTitle){
+        throw new Error("Error: taks don't empyt")
+      }
+      const newTaks = {id:id, title: newTaskTitle, isComplete: false};
+      setTasks([...tasks, newTaks]);
+    } catch (error) {
+      console.log(error)
+    }   
   }
 
   function handleToggleTaskCompletion(id: number) {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
+    const updateTask = tasks.map(task => {
+      if(task.id === id) {
+        task.isComplete ? task.isComplete = false : task.isComplete = true 
+        return {...task};
+      }
+      
+      return task;      
+    });
+
+    console.log(updateTask)
+
+    setTasks(updateTask);
   }
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
+    setTasks(tasks.filter(task => task.id !== id));
   }
 
   return (
