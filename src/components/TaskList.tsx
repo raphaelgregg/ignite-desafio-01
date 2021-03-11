@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import '../styles/tasklist.scss'
 
@@ -11,8 +11,27 @@ interface Task {
 }
 
 export function TaskList() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  // const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
+
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const storagedTasks = localStorage.getItem(
+      '@ToDoList:repositories',
+    );
+      if(storagedTasks){
+        return JSON.parse(storagedTasks);
+      }
+
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      '@ToDoList:repositories',
+      JSON.stringify(tasks),
+    )
+  }, [tasks]);
+
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
