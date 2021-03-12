@@ -1,5 +1,8 @@
 # Desafio 01 - Curso Ignite ReactJS 
 
+<img src="./.github/todolist.png" alt="to.do"/>
+<br></br>
+
 ## 💻 Sobre o desafio
 
 Nesse desafio, você deverá criar uma aplicação para treinar o que aprendeu até agora no ReactJS
@@ -16,6 +19,5 @@ Essa será uma aplicação onde o seu principal objetivo é uma pequena aplic
 
 ## Milha extra 🚀
 
-Foi desenvolvido as Feture alem do desafio proposto.
-- Dark theme
+Foi desenvolvido a Feture alem do desafio proposto.
 - uso do storage para armazenar as task
